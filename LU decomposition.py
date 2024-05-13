@@ -14,7 +14,7 @@ from matplotlib.ticker import MaxNLocator
 from matplotlib.ticker import AutoMinorLocator
 
 # Time interval for integration 
-t_min = 1e-2
+t_min = 0.1
 t_max = 0.2
 t_span = (t_min, t_max)
 timespan = np.linspace(t_min, t_max, 1000000)
@@ -51,7 +51,7 @@ H = Function("H")(t)
 A = Matrix([[-2 *H* Ωγ, -k, -0.5*H*Ωdm, 0, -k**2/(3*H) - H],
                     [k/3, 0, 0, 0, k/3],
                     [-6 *H* Ωγ, 0, -1.5*H*Ωdm, -1j*k, -k**2/(H) - 3*H],
-                    [0, 0, 0, -H/s, -1j*k],
+                    [0, 0, 0, -H, -1j*k],
                     [-2 *H* Ωγ, 0, -0.5*H*Ωdm, 0, -k**2/(3*H) - H]])
 
 N = A.shape[0]
@@ -151,7 +151,7 @@ def system_of_ODEs(t, X):
     A = np.array([[-2 *H* Ωγ, -k, -0.5*H*Ωdm, 0, -k**2/(3*H) - H],
                     [k/3, 0, 0, 0, k/3],
                     [-6 *H* Ωγ, 0, -1.5*H*Ωdm, -1j*k, -k**2/(H) - 3*H],
-                    [0, 0, 0, -H/a, -1j*k],
+                    [0, 0, 0, -H, -1j*k],
                     [-2 *H* Ωγ, 0, -0.5*H*Ωdm, 0, -k**2/(3*H) - H]])
     
     # Compute the derivative of the state vector
@@ -173,7 +173,7 @@ plt.rcParams["font.family"] = "serif"
 
 fig, (ax1, ax2) = plt.subplots(2, 1, sharex=True, figsize=(7, 3))
 
-fig.suptitle('Radiation dominated photon and CDM system: $\Theta_0$, $k$ = 200, $\eta_0 = 10^{-2}$')
+fig.suptitle('Radiation dominated photon and CDM system: $\Theta_0$, $k$ = 200, $\eta_0 = 0.1$')
 
 ax1.plot(solution.t, solution.y[1], linestyle='None', linewidth=1, marker='.',color='turquoise', label="No decoupling", markersize=2)
 ax1.plot(y.t, y.y[0], linestyle='None', linewidth=1, marker='x',label="LU decoupled", markersize=2)
