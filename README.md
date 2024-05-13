@@ -1,4 +1,4 @@
-                                                                                                                     
+```                                                                                                                     
                                    ,,                                                 ,,    ,,                       
 `7MMF'    `7MMF'   `7MF'         `7MM                                               `7MM    db                       
   MM        MM       M             MM                                                 MM                             
@@ -9,7 +9,7 @@
 .JMMmmmmMMM  `bmmmmd"'       `Wbmd"MML.`Mbmmd'  YMbmd'   `Ybmd9'  `Mbod"YML. MMbmmd'.JMML..JMML..JMML  JMML.YMMMMMb  
                                                                              MM                            6'     dP 
                                                                            .JMML.                          Ybmmmd'   
-
+```
 Pre-requisite Python libraries: Matplotlib, SciPy, SymPy, NumPy
 This repository is to help you numerically decouple systems of coupled differential equations with complicated 
 and/or oscillatory behaviour. I have not had time to fully clean the code, but it is well-commented and optimised 
